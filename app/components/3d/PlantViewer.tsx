@@ -11,7 +11,7 @@ export default function PlantViewer() {
             <Canvas dpr={[1, 2]} camera={{ fov: 40, position: [0, 0, 5] }} gl={{ antialias: true }}>
                 <Suspense fallback={null}>
                     <Stage environment="city" intensity={0.6} adjustCamera={1.2} shadows={false}>
-                        <Center precision={0.5}>
+                        <Center>
                             <PlantModel />
                         </Center>
                     </Stage>
