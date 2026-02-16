@@ -2,7 +2,8 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useProgress } from "@react-three/drei";
 
 const PlantViewer = dynamic(() => import("./3d/PlantViewer"), {
     ssr: false,
@@ -13,8 +14,43 @@ const PlantViewer = dynamic(() => import("./3d/PlantViewer"), {
     ),
 });
 
+function ModelLoadingOverlay({
+    onLoaded,
+}: {
+    onLoaded: () => void;
+}) {
+    const { progress, active } = useProgress();
+
+    useEffect(() => {
+        if (!active && progress >= 99) {
+            onLoaded();
+        }
+    }, [active, progress, onLoaded]);
+
+    const displayProgress = Math.round(Math.min(100, progress));
+
+    return (
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-white/95 backdrop-blur-sm">
+            <div className="w-14 h-14 md:w-16 md:h-16 rounded-full border-4 border-[var(--primary-light)] border-t-[var(--primary)] animate-spin mb-8" />
+            <p className="text-[var(--foreground)] font-semibold text-lg md:text-xl mb-1">
+                Loading model...
+            </p>
+            <p className="text-[var(--primary)] font-bold text-3xl md:text-4xl mb-6 tabular-nums transition-all duration-150">
+                {displayProgress}%
+            </p>
+            <div className="w-full max-w-xs h-2.5 bg-[var(--primary-light)] rounded-full overflow-hidden">
+                <div
+                    className="h-full bg-[var(--primary)] rounded-full transition-all duration-300 ease-out"
+                    style={{ width: `${displayProgress}%` }}
+                />
+            </div>
+        </div>
+    );
+}
+
 export default function PlantShowcase() {
     const [isInteracting, setIsInteracting] = useState(false);
+    const [isModelLoaded, setIsModelLoaded] = useState(false);
 
     return (
         <section className="section-padding bg-gray-50 overflow-hidden">
@@ -71,9 +107,14 @@ export default function PlantShowcase() {
                             </div>
                         </div>
                     ) : (
-                        <div className="absolute inset-0 opacity-0 animate-[fadeIn_0.5s_ease-out_forwards]">
-                            <PlantViewer />
-                        </div>
+                        <>
+                            <div className="absolute inset-0 opacity-0 animate-[fadeIn_0.5s_ease-out_forwards]">
+                                <PlantViewer />
+                            </div>
+                            {!isModelLoaded && (
+                                <ModelLoadingOverlay onLoaded={() => setIsModelLoaded(true)} />
+                            )}
+                        </>
                     )}
                 </div>
             </div>
