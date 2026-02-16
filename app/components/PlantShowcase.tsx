@@ -70,7 +70,7 @@ export default function PlantShowcase() {
                         <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 z-10 p-4">
                             <div className="absolute inset-0 rounded-xl overflow-hidden">
                                 <Image
-                                    src="/image_07.png"
+                                    src="/image_07.webp"
                                     alt="3D Plant Model Preview"
                                     fill
                                     className="object-cover opacity-60 blur-sm"

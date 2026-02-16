@@ -22,7 +22,7 @@ export default function Implementations() {
                     {/* Visual */}
                     <div className="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-xl">
                         <Image
-                            src="/image_06.png" // Using a nice product/greenery shot
+                            src="/image_06.webp" // Using a nice product/greenery shot
                             alt="PlantFEED implementations"
                             fill
                             className="object-cover"

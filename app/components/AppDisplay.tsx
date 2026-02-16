@@ -65,7 +65,7 @@ export default function AppDisplay() {
                         <div className="relative z-10 flex justify-center">
                             <div className="relative w-[250px] h-[573px] md:w-[300px] md:h-[688px] bg-black rounded-[2.5rem] md:rounded-[3rem] border-[6px] md:border-8 border-gray-900 shadow-2xl overflow-hidden transition-transform duration-500 hover:scale-[1.02]">
                                 <Image
-                                    src="/mobile_view.png"
+                                    src="/mobile_view.webp"
                                     alt="PlantFEED App Interface"
                                     fill
                                     className="object-cover"

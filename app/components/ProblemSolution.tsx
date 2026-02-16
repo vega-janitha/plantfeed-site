@@ -8,7 +8,7 @@ export default function ProblemSolution() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center mb-16 md:mb-24">
                     <div className="relative h-[300px] md:h-[400px] w-full rounded-2xl overflow-hidden shadow-xl">
                         <Image
-                            src="/image_12.jpg"
+                            src="/image_12.webp"
                             alt="Planting seeds"
                             fill
                             className="object-cover"
@@ -67,7 +67,7 @@ export default function ProblemSolution() {
                     </div>
                     <div className="relative h-[300px] md:h-[400px] w-full rounded-2xl overflow-hidden shadow-xl order-1 lg:order-2">
                         <Image
-                            src="/image_03.jpeg" // Rooftop garden as the result
+                            src="/image_03.webp" // Rooftop garden as the result
                             alt="Thriving rooftop garden"
                             fill
                             className="object-cover"

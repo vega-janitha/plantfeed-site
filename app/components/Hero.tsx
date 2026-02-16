@@ -7,7 +7,7 @@ export default function Hero() {
             {/* Background Image with Overlay */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/image_01.jpeg" // Using the image showing app + garden
+                    src="/image_01.webp" // Using the image showing app + garden
                     alt="PlantFEED Smart Gardening"
                     fill
                     className="object-cover opacity-60"
