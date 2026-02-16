@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import ProblemSolution from "./components/ProblemSolution";
 import Features from "./components/Features";
 import AppDisplay from "./components/AppDisplay";
+import PlantShowcase from "./components/PlantShowcase";
 import Sustainability from "./components/Sustainability";
 import Implementations from "./components/Implementations";
 import TechnicalSpecs from "./components/TechnicalSpecs";
@@ -16,6 +17,7 @@ export default function Home() {
       <ProblemSolution />
       <Features />
       <AppDisplay />
+      <PlantShowcase />
       <Sustainability />
       <Implementations />
       <TechnicalSpecs />

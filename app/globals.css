@@ -69,3 +69,12 @@ html {
 .btn-secondary {
   @apply inline-flex items-center justify-center rounded-md border border-transparent bg-[var(--primary-light)] px-6 py-3 text-base font-medium text-[var(--primary)] hover:bg-[#9AE6B4] transition-colors duration-200;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
