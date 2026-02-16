@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  /* Brand Colors */
+  --foreground: #1a1a1a;
+  --background: #ffffff;
+
+  /* Primary Green */
+  --primary: #2F855A;
+  /* Green-600 */
+  --primary-hover: #276749;
+  /* Green-700 */
+  --primary-light: #C6F6D5;
+  /* Green-100 */
+
+  /* Earth/Accent */
+  --accent: #D69E2E;
+  /* Yellow-600 */
+  --accent-light: #FEFCBF;
+  /* Yellow-100 */
+
+  /* Neutrals */
+  --muted: #718096;
+  /* Gray-500 */
+  --border: #E2E8F0;
+  /* Gray-200 */
+  --card: #F7FAFC;
+  /* Gray-50 */
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Utilities */
+.container-custom {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.section-padding {
+  @apply py-16 sm:py-24;
+}
+
+.h1-title {
+  @apply text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl;
+}
+
+.h2-title {
+  @apply text-3xl font-bold tracking-tight sm:text-4xl;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-md border border-transparent bg-[var(--primary)] px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-[var(--primary-hover)] transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-md border border-transparent bg-[var(--primary-light)] px-6 py-3 text-base font-medium text-[var(--primary)] hover:bg-[#9AE6B4] transition-colors duration-200;
+}
