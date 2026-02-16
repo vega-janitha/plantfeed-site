@@ -18,7 +18,7 @@ export default function Hero() {
 
             <div className="container-custom relative z-10 text-white py-12 md:py-0">
                 <div className="max-w-2xl">
-                    <p className="text-[var(--primary-light)] font-semibold tracking-wide uppercase mb-3 md:mb-4 text-xs md:text-sm">
+                    <p className="text-[var(--primary-light)] font-semibold tracking-wide uppercase mb-3 md:mb-4 text-xs md:text-base">
                         Innovations in Smart Gardening
                     </p>
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-6">
