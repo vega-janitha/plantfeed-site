@@ -29,7 +29,7 @@ export default function ProblemSolution() {
                                 Busy schedules, travel, and everyday distractions often lead to missed routines, leaving even well-loved plants stressed and undernourished.
                             </p>
                             <p className="font-semibold text-[var(--primary)]">
-                                Keeping plants healthy shouldn't require constant attention or reminders anymore!
+                                Keeping plants healthy shouldn&apos;t require constant attention or reminders anymore!
                             </p>
                         </div>
                     </div>

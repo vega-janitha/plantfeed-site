@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Sustainability() {
     const items = [
         {
@@ -30,7 +28,7 @@ export default function Sustainability() {
                 <div className="text-center mb-16">
                     <h2 className="h2-title mb-4">Promoting Sustainable Gardening</h2>
                     <p className="max-w-2xl mx-auto text-lg text-white/80 text-justify md:text-center">
-                        PlantFEED isn't just about convenience; it's about growing responsibly.
+                        PlantFEED isn&apos;t just about convenience; it&apos;s about growing responsibly.
                     </p>
                 </div>
 
