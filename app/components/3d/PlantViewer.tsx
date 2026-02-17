@@ -24,9 +24,14 @@ export default function PlantViewer({ isVisible = true }: { isVisible?: boolean 
                 frameloop="always"
             >
                 <Suspense fallback={null}>
-                    <Stage environment="city" intensity={0.6} adjustCamera={1.2} shadows={false}>
+                    <Stage
+                        environment="city"
+                        intensity={0.6}
+                        adjustCamera={false}
+                        shadows={false}
+                    >
                         <Center>
-                            <PlantModel />
+                            <PlantModel scale={3} />
                         </Center>
                     </Stage>
                 </Suspense>
