@@ -37,12 +37,20 @@ export default function Footer() {
                         <h3 className="text-lg font-semibold text-white">Contact Us</h3>
                         <div className="flex flex-col gap-2 text-gray-300">
                             <div className="flex items-center gap-2">
-                                <span>📞</span>
+                                <img
+                                    src="https://img.icons8.com/ios-filled/50/FFFFFF/phone.png"
+                                    alt="Phone"
+                                    className="w-5 h-5 opacity-80"
+                                />
                                 <span>+94 76 222 5555</span>
                             </div>
-                            <div className="flex items-start gap-2">
-                                <span>📍</span>
-                                <span>Trace Expert City, AC19,<br />Colombo 01000</span>
+                            <div className="flex items-center gap-2">
+                                <img
+                                    src="https://img.icons8.com/ios-filled/50/FFFFFF/marker.png"
+                                    alt="Location"
+                                    className="w-5 h-5 opacity-80"
+                                />
+                                <span>Trace Expert City, AC19, <br />Colombo 01000</span>
                             </div>
                         </div>
                     </div>

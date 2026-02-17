@@ -2,10 +2,11 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useProgress } from "@react-three/drei";
 
-const PlantViewer = dynamic(() => import("./3d/PlantViewer"), {
+const PlantViewer = dynamic<{ isVisible: boolean }>(() => import("./3d/PlantViewer"), {
+
     ssr: false,
     loading: () => (
         <div className="flex items-center justify-center w-full h-full min-h-[400px] md:min-h-[500px] bg-gray-50 rounded-2xl">
@@ -13,6 +14,11 @@ const PlantViewer = dynamic(() => import("./3d/PlantViewer"), {
         </div>
     ),
 });
+
+interface PlantViewerProps {
+    isVisible: boolean;
+}
+
 
 function ModelLoadingOverlay({
     onLoaded,
@@ -51,9 +57,40 @@ function ModelLoadingOverlay({
 export default function PlantShowcase() {
     const [isInteracting, setIsInteracting] = useState(false);
     const [isModelLoaded, setIsModelLoaded] = useState(false);
+    const [inViewport, setInViewport] = useState(true);
+    const [userRequestedView, setUserRequestedView] = useState(true);
+    const showcaseRef = useRef<HTMLDivElement>(null);
+    const wasInViewportRef = useRef(true);
+    const hasBeenInViewportRef = useRef(false);
+
+    const isVisible = inViewport && userRequestedView;
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                const nowInViewport = entry.isIntersecting;
+                const wasInViewport = wasInViewportRef.current;
+                wasInViewportRef.current = nowInViewport;
+                if (nowInViewport) hasBeenInViewportRef.current = true;
+                setInViewport(nowInViewport);
+                if (hasBeenInViewportRef.current && wasInViewport && !nowInViewport) {
+                    setUserRequestedView(false);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        const el = showcaseRef.current;
+        if (el) observer.observe(el);
+        return () => {
+            if (el) observer.unobserve(el);
+        };
+    }, []);
+
 
     return (
-        <section className="section-padding bg-gray-50 overflow-hidden">
+        <section ref={showcaseRef} className="section-padding bg-gray-50 overflow-hidden">
+
             <div className="container-custom">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-4">
@@ -109,10 +146,35 @@ export default function PlantShowcase() {
                     ) : (
                         <>
                             <div className="absolute inset-0 opacity-0 animate-[fadeIn_0.5s_ease-out_forwards]">
-                                <PlantViewer />
+                                <PlantViewer isVisible={isVisible} />
                             </div>
+
                             {!isModelLoaded && (
                                 <ModelLoadingOverlay onLoaded={() => setIsModelLoaded(true)} />
+                            )}
+
+                            {isModelLoaded && inViewport && !userRequestedView && (
+                                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
+                                    <div className="absolute inset-0 overflow-hidden">
+                                        <Image
+                                            src="/image_12.webp"
+                                            alt=""
+                                            fill
+                                            className="object-cover opacity-60 blur-sm"
+                                        />
+                                        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/10">
+                                            <button
+                                                onClick={() => {
+                                                    setUserRequestedView(true);
+                                                    setIsModelLoaded(false);
+                                                }}
+                                                className="bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-200 hover:scale-105"
+                                            >
+                                                View 3D
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
                             )}
                         </>
                     )}
