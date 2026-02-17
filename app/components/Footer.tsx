@@ -35,23 +35,44 @@ export default function Footer() {
                     {/* Contact */}
                     <div className="flex flex-col gap-4">
                         <h3 className="text-lg font-semibold text-white">Contact Us</h3>
-                        <div className="flex flex-col gap-2 text-gray-300">
-                            <div className="flex items-center gap-2">
+                        <div className="flex flex-col gap-3 text-gray-300">
+                            <a
+                                href="tel:+94762225555"
+                                className="flex items-center gap-2 hover:text-[var(--primary)] transition-colors w-fit group"
+                            >
                                 <img
                                     src="https://img.icons8.com/ios-filled/50/FFFFFF/phone.png"
                                     alt="Phone"
-                                    className="w-5 h-5 opacity-80"
+                                    className="w-5 h-5 opacity-80 group-hover:opacity-100 transition-opacity"
                                 />
                                 <span>+94 76 222 5555</span>
-                            </div>
-                            <div className="flex items-center gap-2">
+                            </a>
+                            <a
+                                href="https://www.facebook.com/share/1G7qjR3AYv/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 hover:text-[var(--primary)] transition-colors w-fit group"
+                            >
+                                <img
+                                    src="https://img.icons8.com/ios-filled/50/FFFFFF/facebook-new.png"
+                                    alt="Facebook"
+                                    className="w-5 h-5 opacity-80 group-hover:opacity-100 transition-opacity"
+                                />
+                                <span>PlantFEED</span>
+                            </a>
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=Trace+Expert+City+AC19+Colombo+01000"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 hover:text-[var(--primary)] transition-colors w-fit group"
+                            >
                                 <img
                                     src="https://img.icons8.com/ios-filled/50/FFFFFF/marker.png"
                                     alt="Location"
-                                    className="w-5 h-5 opacity-80"
+                                    className="w-5 h-5 opacity-80 group-hover:opacity-100 transition-opacity"
                                 />
-                                <span>Trace Expert City, AC19, <br />Colombo 01000</span>
-                            </div>
+                                <span className="text-sm">Trace Expert City, AC19, <br />Colombo 01000</span>
+                            </a>
                         </div>
                     </div>
 
