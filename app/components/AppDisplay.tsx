@@ -50,25 +50,13 @@ export default function AppDisplay() {
                         {/* Phone Mockup Background Blob - Shifted to the extreme left for maximum asymmetrical balance */}
                         <div className="absolute top-1/2 left-[5%] -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] md:w-[350px] md:h-[350px] bg-[var(--primary-light)] rounded-full blur-3xl opacity-50 z-0"></div>
 
-                        {/* Decorative Side Image - Made even bigger and adjusted position
-                        <div className="absolute -right-20 md:-right-64 top-1/2 -translate-y-1/2 w-64 h-64 md:w-[500px] md:h-[500px] z-0 hidden sm:block">
-                            <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white rotate-[10deg] opacity-70 hover:rotate-0 hover:opacity-100 transition-all duration-700">
-                                <Image
-                                    src="/image_11.png"
-                                    alt="Planting seeds"
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
-                        </div> */}
-
                         <div className="relative z-10 flex justify-center">
-                            <div className="relative w-[250px] h-[573px] md:w-[300px] md:h-[688px] bg-black rounded-[2.5rem] md:rounded-[3rem] border-[6px] md:border-8 border-gray-900 shadow-2xl overflow-hidden transition-transform duration-500 hover:scale-[1.02]">
+                            <div className="relative w-[250px] aspect-[9/19.5] md:w-[300px] bg-black rounded-[2.5rem] md:rounded-[3rem] border-[6px] md:border-8 border-gray-900 shadow-2xl overflow-hidden transition-transform duration-500 hover:scale-[1.02]">
                                 <Image
-                                    src="/mobile_view.webp"
+                                    src="/home_page.webp"
                                     alt="PlantFEED App Interface"
                                     fill
-                                    className="object-cover"
+                                    className="object-cover scale-[1.22] object-center"
                                 />
                             </div>
                         </div>
