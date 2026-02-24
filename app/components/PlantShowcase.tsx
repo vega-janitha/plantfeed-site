@@ -15,11 +15,6 @@ const PlantViewer = dynamic<{ isVisible: boolean }>(() => import("./3d/PlantView
     ),
 });
 
-interface PlantViewerProps {
-    isVisible: boolean;
-}
-
-
 function ModelLoadingOverlay({
     onLoaded,
 }: {
