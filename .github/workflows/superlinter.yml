@@ -26,10 +26,10 @@ jobs:
           TYPESCRIPT_STANDARD_TSCONFIG_FILE: tsconfig.json
           VALIDATE_TYPESCRIPT_STANDARD: false
           FILTER_REGEX_EXCLUDE: '.*\.md$|.*pnpm-lock\.yaml$'
-          # Use project ESLint instead of Super-Linter's TS/TSX to avoid duplicate/conflicting rules
+          # Use project ESLint; skip Super-Linter TS/TSX to avoid duplicate rules
           VALIDATE_TYPESCRIPT_ES: false
           VALIDATE_TSX: false
           # Reduce noise from copy-paste detector (optional: set true to re-enable)
           VALIDATE_JSCPD: false
-          # Rely on repo ESLint; disable duplicate TS/TSX and action checks if desired
+          # Rely on repo ESLint; disable duplicate TS/TSX and action checks
           VALIDATE_GITHUB_ACTIONS: false
