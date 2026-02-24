@@ -5,6 +5,7 @@
       {
         "ignoreAtRules": ["tailwind", "tailwindcss", "theme", "layer", "apply"]
       }
-    ]
+    ],
+    "import-notation": "string"
   }
 }

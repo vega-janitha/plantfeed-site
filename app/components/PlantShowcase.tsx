@@ -140,7 +140,7 @@ export default function PlantShowcase() {
                         </div>
                     ) : (
                         <>
-                            <div className="absolute inset-0 opacity-0 animate-[fadeIn_0.5s_ease-out_forwards]">
+                            <div className="absolute inset-0 opacity-0 animate-[fade-in_0.5s_ease-out_forwards]">
                                 <PlantViewer isVisible={isVisible} />
                             </div>
 

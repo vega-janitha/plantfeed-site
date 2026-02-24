@@ -8,29 +8,37 @@
 :root {
   /* Brand Colors */
   --foreground: #1a1a1a;
-  --background: #ffffff;
+  --background: #fff;
 
   /* Primary Green */
-  --primary: #2F855A;
+
   /* Green-600 */
-  --primary-hover: #276749;
+  --primary: #2f855a;
+
   /* Green-700 */
-  --primary-light: #C6F6D5;
+  --primary-hover: #276749;
+
   /* Green-100 */
+  --primary-light: #c6f6d5;
 
   /* Earth/Accent */
-  --accent: #D69E2E;
+
   /* Yellow-600 */
-  --accent-light: #FEFCBF;
+  --accent: #d69e2e;
+
   /* Yellow-100 */
+  --accent-light: #fefcbf;
 
   /* Neutrals */
-  --muted: #718096;
+
   /* Gray-500 */
-  --border: #E2E8F0;
+  --muted: #718096;
+
   /* Gray-200 */
-  --card: #F7FAFC;
+  --border: #e2e8f0;
+
   /* Gray-50 */
+  --card: #f7fafc;
 }
 
 body {
@@ -63,17 +71,22 @@ html {
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center rounded-md border border-transparent bg-[var(--primary)] px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-[var(--primary-hover)] transition-colors duration-200;
+  @apply inline-flex items-center justify-center rounded-md border border-transparent;
+  @apply bg-[var(--primary)] px-6 py-3 text-base font-medium text-white shadow-sm;
+  @apply hover:bg-[var(--primary-hover)] transition-colors duration-200;
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center rounded-md border border-transparent bg-[var(--primary-light)] px-6 py-3 text-base font-medium text-[var(--primary)] hover:bg-[#9AE6B4] transition-colors duration-200;
+  @apply inline-flex items-center justify-center rounded-md border border-transparent;
+  @apply bg-[var(--primary-light)] px-6 py-3 text-base font-medium text-[var(--primary)];
+  @apply hover:bg-[#9AE6B4] transition-colors duration-200;
 }
 
-@keyframes fadeIn {
+@keyframes fade-in {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
