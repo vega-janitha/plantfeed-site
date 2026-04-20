@@ -6,46 +6,43 @@ import Image from "next/image";
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
 
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+        if (window.location.pathname === '/') {
+            e.preventDefault();
+            if (id === '') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+            setMenuOpen(false);
+        }
+    };
+
     return (
         <nav className="sticky top-0 z-50 w-full bg-white border-b border-[var(--border)] shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
             <div className="container-custom flex h-[4.25rem] min-h-[4.25rem] items-center justify-between gap-8">
                 {/* Left: Navigation Links (desktop) / Menu button (mobile) */}
                 <div className="hidden md:flex items-center gap-8">
                     <a
-                        href="#features"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            const element = document.getElementById('features');
-                            if (element) {
-                                element.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        }}
+                        href="/#features"
+                        onClick={(e) => handleNavClick(e, 'features')}
                         className="text-[15px] font-medium text-[#333] hover:text-[var(--primary)] transition-colors"
                     >
                         Features
                     </a>
                     <a
-                        href="#app"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            const element = document.getElementById('app');
-                            if (element) {
-                                element.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        }}
+                        href="/#app"
+                        onClick={(e) => handleNavClick(e, 'app')}
                         className="text-[15px] font-medium text-[#333] hover:text-[var(--primary)] transition-colors"
                     >
                         App
                     </a>
                     <a
-                        href="#specs"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            const element = document.getElementById('specs');
-                            if (element) {
-                                element.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        }}
+                        href="/#specs"
+                        onClick={(e) => handleNavClick(e, 'specs')}
                         className="text-[15px] font-medium text-[#333] hover:text-[var(--primary)] transition-colors"
                     >
                         Specs
@@ -77,11 +74,8 @@ export default function Navbar() {
                 {/* Center: Logo */}
                 <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
                     <a
-                        href="#"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            window.scrollTo({ top: 0, behavior: "smooth" });
-                        }}
+                        href="/"
+                        onClick={(e) => handleNavClick(e, '')}
                         className="flex items-center gap-2 cursor-pointer"
                     >
                         <Image
@@ -97,14 +91,8 @@ export default function Navbar() {
                 {/* Right: Action */}
                 <div className="flex items-center gap-6">
                     <a
-                        href="#contact"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            const element = document.getElementById('contact');
-                            if (element) {
-                                element.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        }}
+                        href="/#contact"
+                        onClick={(e) => handleNavClick(e, 'contact')}
                         className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-[var(--primary)] px-3 py-1.5 md:px-5 md:py-2.5 text-[13px] md:text-[15px] font-medium text-white shadow-[0_2px_8px_rgba(47,133,90,0.35)] hover:bg-[var(--primary-hover)] hover:shadow-[0_2px_12px_rgba(47,133,90,0.4)] transition-all duration-200 cursor-pointer"
                     >
                         <span className="hidden sm:inline">Contact Us</span>
@@ -147,44 +135,23 @@ export default function Navbar() {
             >
                 <div className="py-4 px-4 flex flex-col gap-3">
                     <a
-                        href="#features"
+                        href="/#features"
                         className="text-[15px] font-medium text-[#333] hover:text-[var(--primary)] py-1 transition-colors"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            setMenuOpen(false);
-                            const element = document.getElementById('features');
-                            if (element) {
-                                element.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        }}
+                        onClick={(e) => handleNavClick(e, 'features')}
                     >
                         Features
                     </a>
                     <a
-                        href="#app"
+                        href="/#app"
                         className="text-[15px] font-medium text-[#333] hover:text-[var(--primary)] py-1 transition-colors"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            setMenuOpen(false);
-                            const element = document.getElementById('app');
-                            if (element) {
-                                element.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        }}
+                        onClick={(e) => handleNavClick(e, 'app')}
                     >
                         App
                     </a>
                     <a
-                        href="#specs"
+                        href="/#specs"
                         className="text-[15px] font-medium text-[#333] hover:text-[var(--primary)] py-1 transition-colors"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            setMenuOpen(false);
-                            const element = document.getElementById('specs');
-                            if (element) {
-                                element.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        }}
+                        onClick={(e) => handleNavClick(e, 'specs')}
                     >
                         Specs
                     </a>
