@@ -40,9 +40,11 @@ export default function Footer() {
                                 href="tel:+94762225555"
                                 className="flex items-center gap-2 hover:text-[var(--primary)] transition-colors w-fit group"
                             >
-                                <img
+                                <Image
                                     src="https://img.icons8.com/ios-filled/50/FFFFFF/phone.png"
                                     alt="Phone"
+                                    width={20}
+                                    height={20}
                                     className="w-5 h-5 opacity-80 group-hover:opacity-100 transition-opacity"
                                 />
                                 <span>+94 76 222 5555</span>
@@ -53,9 +55,11 @@ export default function Footer() {
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 hover:text-[var(--primary)] transition-colors w-fit group"
                             >
-                                <img
+                                <Image
                                     src="https://img.icons8.com/ios-filled/50/FFFFFF/facebook-new.png"
                                     alt="Facebook"
+                                    width={20}
+                                    height={20}
                                     className="w-5 h-5 opacity-80 group-hover:opacity-100 transition-opacity"
                                 />
                                 <span>PlantFEED</span>
@@ -66,9 +70,11 @@ export default function Footer() {
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 hover:text-[var(--primary)] transition-colors w-fit group"
                             >
-                                <img
+                                <Image
                                     src="https://img.icons8.com/ios-filled/50/FFFFFF/marker.png"
                                     alt="Location"
+                                    width={20}
+                                    height={20}
                                     className="w-5 h-5 opacity-80 group-hover:opacity-100 transition-opacity"
                                 />
                                 <span className="text-sm">Trace Expert City, AC19, <br />Colombo 01000</span>
