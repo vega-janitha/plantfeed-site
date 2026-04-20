@@ -86,9 +86,10 @@ export default function Footer() {
                     <div className="flex flex-col gap-4">
                         <h3 className="text-lg font-semibold text-white">Quick Links</h3>
                         <div className="flex flex-col gap-2">
-                            <Link href="#features" className="text-gray-400 hover:text-white transition-colors">Features</Link>
-                            <Link href="#app" className="text-gray-400 hover:text-white transition-colors">App</Link>
-                            <Link href="#specs" className="text-gray-400 hover:text-white transition-colors">Specifications</Link>
+                            <Link href="/#features" className="text-gray-400 hover:text-white transition-colors">Features</Link>
+                            <Link href="/#app" className="text-gray-400 hover:text-white transition-colors">App</Link>
+                            <Link href="/#specs" className="text-gray-400 hover:text-white transition-colors">Specifications</Link>
+                            <Link href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
                         </div>
                     </div>
                 </div>
