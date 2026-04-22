@@ -140,29 +140,6 @@ export default function ContactForm() {
                                     </div>
                                 </div>
 
-                                {/* Website */}
-                                <div className="rounded-2xl sm:rounded-xl border border-emerald-100 sm:border-[var(--border)] ring-1 ring-emerald-100/70 sm:ring-0 bg-gradient-to-r from-emerald-50/90 to-white sm:bg-white p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow flex gap-3 sm:gap-4 items-start">
-                                    <div className="w-10 h-10 sm:w-10 sm:h-10 rounded-full sm:rounded-lg bg-emerald-100 sm:bg-[var(--primary-light)] flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-5 h-5 text-[var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                                        </svg>
-                                    </div>
-                                    <div className="flex-1">
-                                        <p className="text-[11px] sm:text-xs font-semibold text-[#5f6b7a] sm:text-[var(--muted)] uppercase tracking-[0.14em] sm:tracking-wider mb-1">Official website</p>
-                                        <a
-                                            href="https://vega.lk"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 text-base sm:text-sm font-semibold text-[var(--foreground)] hover:text-[var(--primary)] transition-colors"
-                                        >
-                                            <span>www.vega.lk</span>
-                                            {/* <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                            </svg> */}
-                                        </a>
-                                        {/* <p className="text-xs text-[var(--muted)] mt-1">Explore company profile, solutions, and latest updates.</p> */}
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
