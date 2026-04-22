@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -26,27 +27,27 @@ export default function Navbar() {
             <div className="container-custom flex h-[4.25rem] min-h-[4.25rem] items-center justify-between gap-8">
                 {/* Left: Navigation Links (desktop) / Menu button (mobile) */}
                 <div className="hidden md:flex items-center gap-8">
-                    <a
+                    <Link
                         href="/#features"
                         onClick={(e) => handleNavClick(e, 'features')}
                         className="text-[15px] font-medium text-[#333] hover:text-[var(--primary)] transition-colors"
                     >
                         Features
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href="/#app"
                         onClick={(e) => handleNavClick(e, 'app')}
                         className="text-[15px] font-medium text-[#333] hover:text-[var(--primary)] transition-colors"
                     >
                         App
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href="/#specs"
                         onClick={(e) => handleNavClick(e, 'specs')}
                         className="text-[15px] font-medium text-[#333] hover:text-[var(--primary)] transition-colors"
                     >
                         Specs
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Mobile Hamburger Menu Button */}
@@ -73,7 +74,7 @@ export default function Navbar() {
 
                 {/* Center: Logo */}
                 <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
-                    <a
+                    <Link
                         href="/"
                         onClick={(e) => handleNavClick(e, '')}
                         className="flex items-center gap-2 cursor-pointer"
@@ -85,14 +86,13 @@ export default function Navbar() {
                             height={64}
                             className="h-9 w-auto"
                         />
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Right: Action */}
                 <div className="flex items-center gap-6">
-                    <a
-                        href="/#contact"
-                        onClick={(e) => handleNavClick(e, 'contact')}
+                    <Link
+                        href="/contact-us"
                         className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-[var(--primary)] px-3 py-1.5 md:px-5 md:py-2.5 text-[13px] md:text-[15px] font-medium text-white shadow-[0_2px_8px_rgba(47,133,90,0.35)] hover:bg-[var(--primary-hover)] hover:shadow-[0_2px_12px_rgba(47,133,90,0.4)] transition-all duration-200 cursor-pointer"
                     >
                         <span className="hidden sm:inline">Contact Us</span>
@@ -125,7 +125,7 @@ export default function Navbar() {
                                 d="M14 5l7 7m0 0l-7 7m7-7H3"
                             />
                         </svg>
-                    </a>
+                    </Link>
                 </div>
             </div>
             {/* Mobile menu panel */}
@@ -134,27 +134,27 @@ export default function Navbar() {
                     }`}
             >
                 <div className="py-4 px-4 flex flex-col gap-3">
-                    <a
+                    <Link
                         href="/#features"
                         className="text-[15px] font-medium text-[#333] hover:text-[var(--primary)] py-1 transition-colors"
                         onClick={(e) => handleNavClick(e, 'features')}
                     >
                         Features
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href="/#app"
                         className="text-[15px] font-medium text-[#333] hover:text-[var(--primary)] py-1 transition-colors"
                         onClick={(e) => handleNavClick(e, 'app')}
                     >
                         App
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href="/#specs"
                         className="text-[15px] font-medium text-[#333] hover:text-[var(--primary)] py-1 transition-colors"
                         onClick={(e) => handleNavClick(e, 'specs')}
                     >
                         Specs
-                    </a>
+                    </Link>
                 </div>
             </div>
         </nav>
