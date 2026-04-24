@@ -32,7 +32,7 @@ export default function Hero() {
                         <Link href="#features" className="btn-primary text-white hover:text-white text-center">
                             Explore Features
                         </Link>
-                        <Link href="#contact" className="px-6 py-3 rounded-md border border-white text-white font-medium hover:bg-white/10 transition-colors text-center">
+                        <Link href="/contact-us" className="px-6 py-3 rounded-md border border-white text-white font-medium hover:bg-white/10 transition-colors text-center">
                             Contact Us
                         </Link>
                     </div>
